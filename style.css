@@ -1,0 +1,222 @@
+/* RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers*/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1;
+}
+
+ol, ul {
+   list-style: none;
+}
+
+blockquote, q {
+   quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+/* Variables de color */
+:root {
+  --dark-blue-100: #609ed4;
+  --dark-blue-200: #356ea9;
+  --dark-blue-300: #0a3871;
+  --dark-blue-400: #072b61;
+  --dark-blue-500: #052051;
+
+  --light-blue-100: #f3f5fc;
+  --light-blue-200: #eff1fa;
+  --light-blue-300: #e9ecf8;
+  --light-blue-400: #aab2d5;
+  --light-blue-500: #757fb2;
+
+  --gray-100: #ced4da;
+  --gray-200: #adb5bd;
+  --gray-300: #868e96;
+  --gray-400: #495057;
+  --gray-500: #343a40;
+
+  --white: #ffffff;
+}
+
+/* Estilos globales */
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  background-color: var(--light-blue-100);
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+}
+
+section {
+  padding: 50px;
+}
+
+.interaccion {
+  display: grid;
+  grid-template-rows: 6fr 1fr;
+}
+
+.resultado {
+  background-color: var(--white);
+  border-radius: 2rem;
+}
+
+#mensaje-resultado-idle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  flex: 80%;
+}
+
+#mensaje-resultado-idle h2,
+#mensaje-resultado-idle p {
+  margin: 20px 0;
+}
+
+#imgDiv {
+  width: auto;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  overflow: auto;
+  font-size: 32px;
+  height: 30vh;
+  width: 40vw;
+  resize: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#mensaje-usuario {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  color: var(--dark-blue-300);
+  box-sizing: border-box;
+}
+
+#txtOutput {
+  color: var(--gray-400);
+  resize: none;
+}
+
+#alert {
+  font-size: 12px;
+  margin: 5px 0;
+  color: var(--gray-400);
+  justify-content: left;
+}
+
+#alert p{
+    margin-left: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 18vh;
+  height: 67px;
+}
+
+.btn-primary {
+  background-color: var(--dark-blue-300);
+  color: white;
+  border: 1px solid var(--dark-blue-300);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-blue-400);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--dark-blue-300);
+  border: 1px solid var(--dark-blue-300);
+}
+
+.btn-secondary:hover {
+  background-color: var(--light-blue-200);
+}
+
+.encriptar-desencriptar button {
+  width: 40%;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1024px) {
+  /* Estilos para dispositivos móviles */
+}
+
+@media only screen and (min-width: 1025px) {
+  /* Estilos para desktops */
+}
