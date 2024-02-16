@@ -1,18 +1,62 @@
-const tabButtons = document.querySelectorAll('.tab-button');
-const tabContents = document.querySelectorAll('.tab-content');
+const button_encriptar = document.getElementById('button-encriptar');
+const button_desencriptar = document.getElementById('button-desencriptar');
+const button_copiar = document.getElementById('button-copiar');
 
-tabButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    // Remove 'active' class from all buttons and contents
-    tabButtons.forEach((btn) => btn.classList.remove('active'));
-    tabContents.forEach((content) => content.classList.remove('active'));
+const mensaje_usuario = document.getElementById('mensaje-usuario');
+const mensaje_resultado = document.getElementById('mensaje-resultado');
+const contenedor_mensaje_resultado_idle = document.getElementById('contenedor-mensaje-resultado-idle');
+const contenedor_mensaje_resultado = document.getElementById('contenedor-resultado');
 
-    // Add 'active' class to the selected button and content
-    button.classList.add('active');
-    document.getElementById(button.dataset.tab).classList.add('active');
-  });
-});
+let conversion = ['enter', 'imes', 'ai', 'ober', 'ufat'];
+let letra = ['e', 'i', 'a', 'o', 'u'];
 
-function goToPage() {
-  window.location.href = 'https://www.contpaqi.com/contabilidad';
+async function copyToClipboard(text) {
+    await navigator.clipboard.writeText(text);
 }
+
+function desactivar_idle(){
+    contenedor_mensaje_resultado_idle.classList.add('deactive')
+    contenedor_mensaje_resultado.classList.remove('deactive')
+    button_copiar.classList.remove('deactive')
+}
+
+function activar_idle(){
+    contenedor_mensaje_resultado_idle.classList.remove('deactive')
+    contenedor_mensaje_resultado.classList.add('deactive')
+    button_copiar.classList.add('deactive')
+}
+
+function reemplazar(reemplazar, reemplazo, mensaje){
+
+    for(let i = 0; i < reemplazar.length; i++){
+    
+        const regex = RegExp(reemplazar[i], "g");
+        mensaje = mensaje.replace(regex, reemplazo[i])
+    }
+
+    return mensaje;
+}
+
+function encriptacion_click(tipo){
+    let mensaje = mensaje_usuario.value;
+
+    if(mensaje == ""){
+        activar_idle();
+    }else{
+        desactivar_idle();
+        if(tipo == 'encriptar') mensaje = reemplazar(letra, conversion, mensaje);
+        else if(tipo == 'desencriptar') mensaje = reemplazar(conversion, letra, mensaje);
+        mensaje_resultado.innerHTML = mensaje;
+        mensaje_usuario.value = "";
+    }
+}
+
+button_encriptar.addEventListener('click', function() {
+    encriptacion_click('encriptar');
+  });
+button_desencriptar.addEventListener('click', function() {
+    encriptacion_click('desencriptar');
+  });
+button_copiar.addEventListener('click', function() {
+    copyToClipboard(mensaje_resultado.innerHTML)
+  });

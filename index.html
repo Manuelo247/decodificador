@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Barbería Alura</title>
+    <title>Encriptador</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     
@@ -22,22 +22,27 @@
                     <p>Solo letras minúsculas y sin acentos</p>
                 </div>
                 <div class="row encriptar-desencriptar">
-                    <button id="button-encriptar" class="btn-primary">Encriptar</button>
-                    <button id="button-desencriptar" class="btn-secondary">Desencriptar</button>
+                    <button id="button-encriptar" data-button="primary">Encriptar</button>
+                    <button id="button-desencriptar" data-button="secondary">Desencriptar</button>
                 </div>
             </div>
             
         </section>
         <section class="resultado">
 
-            <div id="mensaje-resultado-idle">
-                <img id="imgDiv" src="img\imageidle.png" alt="Imagen Idle">
-                <div>
-                    <h2>Ningún mensaje fue encontrado</h2>
-                    <p>Ingresa el texto que se desea encriptar o desencriptar</p>
+            <div id="contenedor-mensaje-resultado-idle">
+                <div id="mensaje-resultado-idle">
+                    <img id="imgDiv" src="img\imageidle.png" alt="Imagen Idle">
+                    <div>
+                        <h2>Ningún mensaje fue encontrado</h2>
+                        <p>Ingresa el texto que se desea encriptar o desencriptar</p>
+                    </div>
                 </div>
-                <div>
-                    <button id="button-copiar" class="btn-secondary" disabled>Copiar</button>
+            </div>
+            <div id="contenedor-resultado" class="deactive">
+                <div id="div-resultado">
+                    <p id="mensaje-resultado">test</p>
+                    <button id="button-copiar" data-button="secondary">Copiar</button>
                 </div>
             </div>
 

@@ -1,5 +1,4 @@
 /* RESET */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,10 +24,6 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
    display: block;
-}
-
-body {
-   line-height: 1;
 }
 
 ol, ul {
@@ -73,7 +68,7 @@ table {
   --white: #ffffff;
 }
 
-/* Estilos globales */
+/* Global Styles */
 body {
   width: 100vw;
   height: 100vh;
@@ -103,12 +98,28 @@ section {
 
 .interaccion {
   display: grid;
-  grid-template-rows: 6fr 1fr;
+  grid-template-rows: 5fr 1fr;
 }
 
 .resultado {
+  width: 23vw;
+  box-sizing: border-box;
   background-color: var(--white);
   border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mensaje-copiado {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 #mensaje-resultado-idle {
@@ -125,6 +136,16 @@ section {
 #mensaje-resultado-idle h2,
 #mensaje-resultado-idle p {
   margin: 20px 0;
+}
+
+#contenedor-resultado {
+  height: 100%;
+}
+
+#div-resultado {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 6fr 1fr;
 }
 
 #imgDiv {
@@ -152,13 +173,23 @@ textarea {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 #mensaje-usuario {
   width: 100%;
   height: 100%;
   padding: 50px;
+  font-size: 3rem;
+  color: var(--dark-blue-300);
+  box-sizing: border-box;
+}
+
+#mensaje-resultado {
+  word-wrap: break-word;
+  max-height: 60vh;
+  overflow-y: auto;
+  font-size: 1.5rem;
   color: var(--dark-blue-300);
   box-sizing: border-box;
 }
@@ -175,8 +206,8 @@ textarea {
   justify-content: left;
 }
 
-#alert p{
-    margin-left: 4px;
+#alert p {
+  margin-left: 4px;
 }
 
 button {
@@ -188,28 +219,36 @@ button {
   height: 67px;
 }
 
-.btn-primary {
+[data-button="primary"] {
   background-color: var(--dark-blue-300);
   color: white;
   border: 1px solid var(--dark-blue-300);
 }
 
-.btn-primary:hover {
+[data-button="primary"]:hover {
   background-color: var(--dark-blue-400);
 }
 
-.btn-secondary {
+[data-button="secondary"] {
   background-color: transparent;
   color: var(--dark-blue-300);
   border: 1px solid var(--dark-blue-300);
 }
 
-.btn-secondary:hover {
+[data-button="secondary"]:hover {
   background-color: var(--light-blue-200);
 }
 
 .encriptar-desencriptar button {
-  width: 40%;
+  width: 47%;
+}
+
+#button-copiar {
+  width: 100%;
+}
+
+.deactive {
+  display: none;
 }
 
 /* Media Queries */
