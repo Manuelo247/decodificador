@@ -93,7 +93,7 @@ main {
 }
 
 section {
-  padding: 50px;
+  padding: 25px;
 }
 
 .interaccion {
@@ -274,10 +274,65 @@ button {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 1024px) {
-  /* Estilos para dispositivos móviles */
+@media only screen and (max-width: 769px) {
+
+  body{
+    padding: 40px
+  }
+
+  main{
+    grid-template-rows: 4fr 1fr;
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+
+  section, #mensaje-usuario{
+    padding: 20px;
+  }
+
+  section.interaccion{
+    width: 80vw;
+    height: 50vh;
+  }
+
+  #mensaje-usuario{
+    font-size: 2rem;
+  }
+
+  section.resultado{
+    width: 80vw;
+    height: 30vh;
+  }
+
+  #imgDiv{
+    display: None;
+  }
+
 }
 
-@media only screen and (min-width: 1025px) {
-  /* Estilos para desktops */
+@media only screen and (max-width: 426px) {
+
+  main{
+    align-items: center;
+  }
+
+  section.interaccion{
+    height: 55vh;
+  }
+
+  #mensaje-usuario, .interaccion{
+    padding-top: 0;
+  }
+  
+  .encriptar-desencriptar{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section.interaccion, section.resultado, .encriptar-desencriptar button{
+    width: 100%
+  }
+
 }
+
+
