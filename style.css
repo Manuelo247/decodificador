@@ -277,6 +277,8 @@ button {
 @media only screen and (max-width: 769px) {
 
   body{
+    max-height: 100vh;
+    max-width: 100vw;
     padding: 40px
   }
 
