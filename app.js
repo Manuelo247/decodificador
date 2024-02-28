@@ -47,14 +47,20 @@ function activar_idle(){
     button_copiar.classList.add('deactive')
 }
 
-function reemplazar(reemplazar, reemplazo, mensaje){
+function reemplazar(tipo, mensaje){
 
-    for(let i = 0; i < reemplazar.length; i++){
+    let encriptado = {'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat'};
+    let desencriptado = {'ufat': 'u', 'ober': 'o', 'imes': 'i', 'enter': 'e', 'ai': 'a'}   
     
-        const regex = RegExp(reemplazar[i], "g");
-        mensaje = mensaje.replace(regex, reemplazo[i])
-    }
+    let clave = tipo == 'encriptar' ? encriptado : desencriptado;
 
+    console.log(tipo)
+    console.log(clave)
+
+    Object.entries(clave).forEach(([key, value]) => { 
+        mensaje = mensaje.replaceAll(key, value);
+    });
+    
     return mensaje;
 }
 
@@ -68,8 +74,7 @@ function encriptacion_click(tipo){
         activar_idle();
     }else{
         desactivar_idle();
-        if(tipo == 'encriptar') mensaje = reemplazar(letra, conversion, mensaje);
-        else if(tipo == 'desencriptar') mensaje = reemplazar(conversion, letra, mensaje);
+        mensaje = reemplazar(tipo, mensaje);
         mensaje_resultado.innerHTML = mensaje;
         mensaje_usuario.value = "";
     }
