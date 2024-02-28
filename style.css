@@ -101,8 +101,9 @@ section {
   grid-template-rows: 5fr 1fr;
 }
 
-.resultado {
+.resultado{
   width: 23vw;
+  height: 100%;
   box-sizing: border-box;
   background-color: var(--white);
   border-radius: 2rem;
@@ -270,7 +271,41 @@ button {
   transform: translateY(-100%);
 }
 
+/* .contacto{
+  height: auto;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+} */
 
+.contacto{
+  display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+
+  position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.contacto p{
+  font-size: 12px;
+  text-align: center;
+  color: var(--gray-100);
+  margin-left: 2px;
+  margin-top: 2px;
+  background-color: #343a40;
+    padding: 1px 3px;
+    border-radius: 5px;
+}
+
+.contacto:hover{
+  cursor: pointer;
+}
+
+.contacto img{
+  width: 25px;
+}
 
 @keyframes desaparecer {
   0% { opacity: 1; }
@@ -312,10 +347,20 @@ button {
   section.resultado{
     width: 80vw;
     height: 30vh;
+    height: 30vh;
   }
 
   #imgDiv{
     display: None;
+  }
+
+  .contacto{
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .contacto p{
+    display: none;
   }
 
 }
@@ -324,6 +369,7 @@ button {
 
   main{
     align-items: center;
+    height: 100%;
   }
 
   section.interaccion{
@@ -341,6 +387,11 @@ button {
 
   section.interaccion, section.resultado, .encriptar-desencriptar button{
     width: 100%
+  }
+
+  .contacto{
+    left: 10px;
+    bottom: 10px;
   }
 
 }

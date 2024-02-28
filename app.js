@@ -2,6 +2,7 @@ const button_encriptar = document.getElementById('button-encriptar');
 const button_desencriptar = document.getElementById('button-desencriptar');
 const button_copiar = document.getElementById('button-copiar');
 
+const contacto = document.querySelector('.contacto');
 const mensaje_usuario = document.getElementById('mensaje-usuario');
 const mensaje_resultado = document.getElementById('mensaje-resultado');
 const contenedor_mensaje_resultado_idle = document.getElementById('contenedor-mensaje-resultado-idle');
@@ -49,7 +50,7 @@ function activar_idle(){
 
 function reemplazar(tipo, mensaje){
 
-    let encriptado = {'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat'};
+    let encriptado = {'e': 'enter', 'i': 'imes','a': 'ai', 'o': 'ober', 'u': 'ufat'};
     let desencriptado = {'ufat': 'u', 'ober': 'o', 'imes': 'i', 'enter': 'e', 'ai': 'a'}   
     
     let clave = tipo == 'encriptar' ? encriptado : desencriptado;
@@ -97,3 +98,7 @@ button_copiar.addEventListener('click', function() {
     copyToClipboard(mensaje_resultado.innerHTML);
     ventana_copiado();
   });
+
+contacto.addEventListener('click', function() {
+    window.location.href = 'https://github.com/Manuelo247/decodificador';
+});

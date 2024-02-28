@@ -12,6 +12,7 @@
 </head>
 <body>
     <main>
+
         <section class="interaccion">
 
             <textarea id="mensaje-usuario" placeholder="Ingrese su texto aqui"></textarea>
@@ -27,27 +28,38 @@
             </div>
             
         </section>
-        <section class="resultado">
 
-            <div id="contenedor-mensaje-resultado-idle">
-                <div id="mensaje-resultado-idle">
-                    <img id="imgDiv" src="img\imageidle.png" alt="Imagen Idle">
-                    <div>
-                        <h2>Ningún mensaje fue encontrado</h2>
-                        <p>Ingresa el texto que se desea encriptar o desencriptar</p>
+        <div>
+            <section class="resultado">
+                <div id="contenedor-mensaje-resultado-idle">
+                    <div id="mensaje-resultado-idle">
+                        <img id="imgDiv" src="img\imageidle.png" alt="Imagen Idle">
+                        <div>
+                            <h2>Ningún mensaje fue encontrado</h2>
+                            <p>Ingresa el texto que se desea encriptar o desencriptar</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="contenedor-resultado" class="deactive">
-                <div id="div-resultado">
-                    <p id="mensaje-resultado">test</p>
-                    <button id="button-copiar" data-button="secondary">Copiar</button>
-                    <div class="ventana-globo" style="display: none;">Texto copiado</div>
+                <div id="contenedor-resultado" class="deactive">
+                    <div id="div-resultado">
+                        <p id="mensaje-resultado">test</p>
+                        <button id="button-copiar" data-button="secondary">Copiar</button>
+                        <div class="ventana-globo" style="display: none;">Texto copiado</div>
+                    </div>
                 </div>
-            </div>
-
-        </section>
+            </section>
+            <!-- <div class="contacto">
+                <img alt="Static Badge" src="img/github.svg">
+            </div> -->
+        </div>
+        
     </main>
+
+    <div class="contacto">
+        <img alt="Static Badge" src="img/github.svg">
+        <p>Manuelo247</p>
+    </div>
+
     <script src="app.js"></script>    
 </body>
 </html>
