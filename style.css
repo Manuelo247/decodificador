@@ -229,6 +229,10 @@ button {
   background-color: var(--dark-blue-400);
 }
 
+[data-button="primary"]:active {
+  background-color: var(--dark-blue-500);
+}
+
 [data-button="secondary"] {
   background-color: transparent;
   color: var(--dark-blue-300);
@@ -237,6 +241,10 @@ button {
 
 [data-button="secondary"]:hover {
   background-color: var(--light-blue-200);
+}
+
+[data-button="secondary"]:active {
+  background-color: var(--light-blue-300);
 }
 
 .encriptar-desencriptar button {
