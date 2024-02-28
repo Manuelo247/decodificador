@@ -61,6 +61,9 @@ function reemplazar(reemplazar, reemplazo, mensaje){
 function encriptacion_click(tipo){
     let mensaje = mensaje_usuario.value;
 
+    mensaje = mensaje.toLowerCase();
+    mensaje = mensaje.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
     if(mensaje == ""){
         activar_idle();
     }else{
