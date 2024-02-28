@@ -80,6 +80,11 @@ function encriptacion_click(tipo){
     }
 }
 
+mensaje_usuario.addEventListener("input", function() {
+    this.value = this.value.toLowerCase();
+    this.value = this.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+});
+
 button_encriptar.addEventListener('click', function() {
     encriptacion_click('encriptar');
   });
