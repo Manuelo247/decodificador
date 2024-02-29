@@ -291,10 +291,10 @@ button {
 .contacto p{
   font-size: 12px;
   text-align: center;
-  color: var(--gray-100);
+  color: var(--light-blue-100);
   margin-left: 2px;
   margin-top: 2px;
-  background-color: #343a40;
+  background-color: var(--dark-blue-300);
     padding: 1px 3px;
     border-radius: 5px;
 }
@@ -305,6 +305,7 @@ button {
 
 .contacto img{
   width: 25px;
+  fill: var(--gray-200)
 }
 
 @keyframes desaparecer {
