@@ -290,6 +290,7 @@ button {
 
 .contacto p{
   font-size: 12px;
+  z-index: 2;
   text-align: center;
   color: var(--light-blue-100);
   margin-left: 2px;
