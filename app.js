@@ -105,23 +105,29 @@ button_copiar.addEventListener('click', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     Swal.fire({
-        title: "<strong>HTML <u>example</u></strong>",
+        title: "Bienvenido al Encriptador",
         icon: "info",
+        customClass: {
+            icon: "swal2-icon-large", // Agrega una clase CSS personalizada al icono
+            confirmButton: "swal-confirm-button"
+        },
         html: `
-          You can use <b>bold text</b>,
-          <a href="#">links</a>,
-          and other HTML tags
+          <ul>
+            <li>1. La app funciona para cifrar o descifrar mensajes.</li>
+            <li>2. El texto original se borrará en cuanto lo cifres o descifres.</li>
+            <li>3. No se aceptarán mayúsculas, acentos ni caracteres especiales.</li>
+          </ul>
+          <span class="pie-swal">Si te gusta mi proyecto, agradecería que le dieras una estrella en <a href="https://github.com/Manuelo247" target="_blank">GitHub</a></span>
+          <span class="pie-swal">Desplaza hacia abajo para ver mis redes.</span>
         `,
+        width: 700,
         showCloseButton: true,
-        showCancelButton: true,
         focusConfirm: false,
         confirmButtonText: `
-          <i class="fa fa-thumbs-up"></i> Great!
+        <span class="material-symbols-outlined">
+        thumb_up
+        </span> Entendido!
         `,
         confirmButtonAriaLabel: "Thumbs up, great!",
-        cancelButtonText: `
-          <i class="fa fa-thumbs-down"></i>
-        `,
-        cancelButtonAriaLabel: "Thumbs down"
       });
 });
