@@ -12,6 +12,8 @@ const ventanaGlobo = document.querySelector('.ventana-globo')
 let conversion = ['enter', 'imes', 'ai', 'ober', 'ufat'];
 let letra = ['e', 'i', 'a', 'o', 'u'];
 
+// ############################### FUNCTIONS ##################################
+
 async function copyToClipboard(text) {
     await navigator.clipboard.writeText(text);
 }
@@ -81,6 +83,8 @@ function encriptacion_click(tipo){
     }
 }
 
+// ############################### EVENTS ##################################
+
 mensaje_usuario.addEventListener("input", function() {
     this.value = this.value.toLowerCase();
     this.value = this.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -99,6 +103,10 @@ button_copiar.addEventListener('click', function() {
     ventana_copiado();
   });
 
-contacto.addEventListener('click', function() {
-    window.location.href = 'https://github.com/Manuelo247/decodificador';
+document.addEventListener('DOMContentLoaded', function() {
+    Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success"
+      });
 });

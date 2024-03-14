@@ -269,6 +269,12 @@ button {
   width: 47%;
 }
 
+.material-symbols-outlined{
+  vertical-align: -5px;
+  
+  font-size: 22px !important
+}
+
 #button-copiar {
   width: 100%;
 }
