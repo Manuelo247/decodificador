@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li>2. El texto original se borrará en cuanto lo cifres o descifres.</li>
             <li>3. No se aceptarán mayúsculas, acentos ni caracteres especiales.</li>
           </ul>
-          <span class="pie-swal">Si te gusta mi proyecto, agradecería que le dieras una estrella en <a href="https://github.com/Manuelo247" target="_blank">GitHub</a></span>
+          <span class="pie-swal">Si te gusta mi proyecto, agradecería que le dieras una estrella en <a href="https://github.com/Manuelo247/decodificador" target="_blank">GitHub</a></span>
           <span class="pie-swal">Desplaza hacia abajo para ver mis redes.</span>
         `,
         width: 700,
@@ -158,14 +158,13 @@ swalConfetti.addEventListener('click', function() {
     }, 250);
 
     Swal.fire({
-        imageUrl: "https://media.tenor.com/zGIMaKCYD-EAAAAi/happy.gif",
+        imageUrl: "https://media.tenor.com/CC1VPnwBVMMAAAAi/gianbortion-cat.gif",
         imageHeight: "200px",
         imageAlt: "bongoCat",
         title: "Gracias por usar mi pagina!",
-        // icon: "info",
         html: `
         Te invito a darle una estrella en
-        <a href="https://github.com/Manuelo247" target="_blank">GitHub</a>.
+        <a href="https://github.com/Manuelo247/decodificador" target="_blank">GitHub</a>.
         `,
         showCloseButton: true,
         showCancelButton: true,
@@ -187,9 +186,8 @@ swalConfetti.addEventListener('click', function() {
             cancelButton: "swal-cancel-button"
         },
       }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            window.location.href = "https://github.com/Manuelo247/decodificador";
+            window.open("https://github.com/Manuelo247/decodificador", "_blank");
         }
       });
 });
