@@ -138,7 +138,7 @@ swalConfetti.addEventListener('click', function() {
 
     var duration = 5 * 1000;
     var animationEnd = Date.now() + duration;
-    var defaults = { startVelocity: 30, spread: 360, ticks: 300, zIndex: 1600 };
+    var defaults = { startVelocity: 30, spread: 360, ticks: 100, zIndex: 1600 };
 
     function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
