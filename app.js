@@ -7,7 +7,9 @@ const mensaje_usuario = document.getElementById('mensaje-usuario');
 const mensaje_resultado = document.getElementById('mensaje-resultado');
 const contenedor_mensaje_resultado_idle = document.getElementById('contenedor-mensaje-resultado-idle');
 const contenedor_mensaje_resultado = document.getElementById('contenedor-resultado');
+
 const ventanaGlobo = document.querySelector('.ventana-globo')
+const swalConfetti = document.querySelector('.confetti')
 
 let conversion = ['enter', 'imes', 'ai', 'ober', 'ufat'];
 let letra = ['e', 'i', 'a', 'o', 'u'];
@@ -107,10 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
     Swal.fire({
         title: "Bienvenido al Encriptador",
         icon: "info",
-        customClass: {
-            icon: "swal2-icon-large", // Agrega una clase CSS personalizada al icono
-            confirmButton: "swal-confirm-button"
-        },
         html: `
           <ul>
             <li>1. La app funciona para cifrar o descifrar mensajes.</li>
@@ -129,5 +127,69 @@ document.addEventListener('DOMContentLoaded', function() {
         </span> Entendido!
         `,
         confirmButtonAriaLabel: "Thumbs up, great!",
+        customClass: {
+            icon: "swal2-icon-large", // Agrega una clase CSS personalizada al icono
+            confirmButton: "swal-confirm-button"
+        },
+      });
+});
+
+swalConfetti.addEventListener('click', function() {
+
+    var duration = 5 * 1000;
+    var animationEnd = Date.now() + duration;
+    var defaults = { startVelocity: 30, spread: 360, ticks: 300, zIndex: 1600 };
+
+    function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+    }
+
+    var interval = setInterval(function() {
+    var timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+        return clearInterval(interval);
+    }
+
+    var particleCount = 100 * (timeLeft / duration);
+    // since particles fall down, start a bit higher than random
+    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    }, 250);
+
+    Swal.fire({
+        imageUrl: "https://media.tenor.com/zGIMaKCYD-EAAAAi/happy.gif",
+        imageHeight: "200px",
+        imageAlt: "bongoCat",
+        title: "Gracias por usar mi pagina!",
+        // icon: "info",
+        html: `
+        Te invito a darle una estrella en
+        <a href="https://github.com/Manuelo247" target="_blank">GitHub</a>.
+        `,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: true,
+        confirmButtonText: `
+            <span class="material-symbols-outlined">
+                star
+            </span>Star
+        `,
+        confirmButtonAriaLabel: "Thumbs up, great!",
+        cancelButtonText: `
+            <span class="material-symbols-outlined">
+                sentiment_dissatisfied
+            </span>No
+        `,
+        cancelButtonAriaLabel: "Thumbs down",
+        customClass: {
+            confirmButton: "swal-confirm-button",
+            cancelButton: "swal-cancel-button"
+        },
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            window.location.href = "https://github.com/Manuelo247/decodificador";
+        }
       });
 });
