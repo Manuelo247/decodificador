@@ -65,16 +65,27 @@ table {
   --gray-400: #495057;
   --gray-500: #343a40;
 
+  --midnight-blue-100: #ffffff;
+  --midnight-blue-200: #f5e5ff;
+  --midnight-blue-300: #ceadff;
+  --midnight-blue-400: #9670ff;
+  --midnight-blue-500: #6542ff;
+  --midnight-blue-600: #4e33ff;
+  --midnight-blue-700: #4133ff;
+  --midnight-blue-800: #051eff;
+  --midnight-blue-900: #0744d5;
+  --midnight-blue-950: #0a3871;
+
   --white: #ffffff;
 }
 
 /* Global Styles */
 body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  
   background-color: var(--light-blue-100);
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
@@ -88,8 +99,11 @@ main {
   display: grid;
   grid-template-columns: 4fr 1fr;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   margin: 0 auto;
+  padding: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
 }
 
 section {
@@ -98,7 +112,8 @@ section {
 
 .interaccion {
   display: grid;
-  grid-template-rows: 5fr 1fr;
+    grid-template-rows: 5fr 1fr;
+    row-gap: 10px;
 }
 
 .resultado{
@@ -136,6 +151,7 @@ section {
 
 #mensaje-resultado-idle h2,
 #mensaje-resultado-idle p {
+  color: var(--midnight-blue-950);
   margin: 20px 0;
 }
 
@@ -160,7 +176,8 @@ h2 {
 }
 
 textarea {
-  background-color: transparent;
+  background-color: var(--white);
+    border-radius: 2rem;
   border: none;
   outline: none;
   overflow: auto;
@@ -303,7 +320,7 @@ button {
   cursor: pointer;
 }
 
-.contacto img{
+.contacto svg{
   width: 25px;
   fill: var(--gray-200)
 }
@@ -315,6 +332,40 @@ button {
 
 .desaparecer {
   animation: desaparecer 1s forwards;
+}
+
+footer{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+  width: 100%; /* Establece el width en 100% para que el footer ocupe todo el ancho */
+  height: 3rem; /* Establece la altura del footer */
+  background-color: var(--midnight-blue-950); /* Agrega un color de fondo al footer */
+  z-index: 1; /* Establece un z-index más alto que el contenido del main para asegurarte de que el footer se muestre encima del contenido */
+}
+
+footer svg{
+  width: 2rem;
+  padding-top: 5px;
+  fill: white;
+  margin: auto 0;
+  transition: all .3s ease;
+}
+
+footer svg:hover{
+  fill: #d8dfe8;
+  transform: scale(1.2);
+}
+
+footer p{
+  color: white;
+  font-style: italic !important;
+}
+
+footer p strong{
+  font-weight: bold;
 }
 
 /* Media Queries */
@@ -396,5 +447,3 @@ button {
   }
 
 }
-
-
